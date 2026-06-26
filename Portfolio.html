@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --bg: #050505;
+    --surface: #111111;
+    --surface-soft: #141414;
+    --text: #f8f8f8;
+    --muted: #b8b8b8;
+    --accent: #ff2b2b;
+    --accent-soft: rgba(255, 43, 43, 0.14);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: Segoe UI, sans-serif;
+    background: #050505;
+    color: var(--text);
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: var(--accent);
+    padding: 20px 0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(255, 43, 43, 0.18), transparent 28%),
+        linear-gradient(180deg, #0b0b0b 0%, #120202 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    text-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: var(--muted);
+}
+
+.hero .btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+.hero .btn:hover {
+    background: #ff4d4d;
+}
+
+/* SECTION TITLE */
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 120px 0;
+}
+
+.about-desc {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.3rem;
+}
+
+.feature-card {
+    background: var(--surface);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.feature-card i {
+    font-size: 60px;
+    color: var(--accent);
+    margin-bottom: 25px;
+}
+
+.feature-card h4 {
+    font-weight: 700;
+}
+
+/* PROJECTS */
+
+.projects {
+    padding: 120px 0;
+    background: #070707;
+}
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    height: 100%;
+}
+
+.project-header {
+    background: linear-gradient(135deg, #2e0606, #590b0b);
+    color: white;
+    padding: 30px;
+}
+
+.badge-custom {
+    background: rgba(255, 43, 43, 0.18);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.project-body {
+    padding: 30px;
+}
+
+.project-body p {
+    color: var(--muted);
+    min-height: 100px;
+}
+
+.btn-project {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+}
+
+.btn-project:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 120px 0;
+    text-align: center;
+    background: #0a0a0a;
+}
+
+.contact-box {
+    background: var(--surface);
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #070707;
+    color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top site-header">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+Roosevelt G. 
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li><a class="nav-link" href="#home">Home</a></li>
+<li><a class="nav-link" href="#about">About</a></li>
+<li><a class="nav-link" href="#projects">Projects</a></li>
+<li><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<div class="container">
+
+<h1>
+Welcome to My<br>
+Portfolio
+</h1>
+
+
+
+<a href="#projects"
+class="btn btn-light">
+View My Work
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<p class="about-desc">
+I'm a dedicated developer specializing in web development,
+database systems, and full-stack solutions. I enjoy building
+efficient applications and solving problems with clean,
+maintainable code.
+</p>
+
+<div class="row mt-5 g-4">
+
+<div class="col-md-4">
+<div class="feature-card">
+<i class="fas fa-code"></i>
+<h4>Web Development</h4>
+<p>HTML, CSS, PHP, JavaScript</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="feature-card">
+<i class="fas fa-database"></i>
+<h4>Database Management</h4>
+<p>SQL, Stored Procedures, Views</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="feature-card">
+<i class="fas fa-gears"></i>
+<h4>Problem Solving</h4>
+<p>Transactions & Concurrency Control</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<div class="row g-4">
+
+<!-- SIX PROJECT CARDS -->
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">My projects</span>
+            <h3>My projects</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Collection of selected projects demonstrating web and database work.</p>
+            <a href="https://github.com/rrcollab-dot" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">Views</span>
+            <h3>Views</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Examples of database views used to simplify reporting and data access.</p>
+            <a href="https://github.com/rrcollab-dot/IT223--Views.git" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">Procedural</span>
+            <h3>Creating procedural</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Stored procedure examples and automation scripts for common tasks.</p>
+            <a href="https://github.com/rrcollab-dot/IT223-CreatingProcedural.git" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">Transactions</span>
+            <h3>Transaction Management</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Projects focused on ACID transactions, locking, and concurrency control.</p>
+            <a href="https://github.com/rrcollab-dot/IT-223-Transaction_Management.git" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">Query</span>
+            <h3>Query optimization</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Examples and notes on indexing, EXPLAIN plans, and query tuning.</p>
+            <a href="https://github.com/rrcollab-dot/IT223-QueryOptimization.git" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="project-card">
+        <div class="project-header">
+            <span class="badge-custom">Misc</span>
+            <h3>CaterLater</h3>
+        </div>
+
+        <div class="project-body">
+            <p>Miscellaneous projects and experiments to be categorized later.</p>
+            <a href="https://drive.google.com/file/d/1waKHmqiGNDRTmjanMwY69viW9ra2yWg8/view?usp=drive_link" target="_blank" rel="noreferrer" class="btn btn-project"><i class="fab fa-github"></i> View Repository</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2 class="mb-3">
+Contact Me
+</h2>
+
+<p>
+rrgulanes8@gmail.com
+</p>
+
+<a href="mailto:rrgulanes8@gmail.com"
+class="btn btn-project">
+Send Email
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© <span id="currentYear">2026</span> A Portfolio Website
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
